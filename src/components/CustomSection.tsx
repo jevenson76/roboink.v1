@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CustomSection: React.FC = () => {
+  // Updated: 2024-12-19 - Enhanced gradient styling
   return (
     <section className="relative py-16 bg-gradient-to-br from-navy via-navy/95 to-copper/30 overflow-hidden">
       {/* Decorative background elements */}
@@ -16,7 +17,7 @@ const CustomSection: React.FC = () => {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-white/95 via-parchment/90 to-white/85 border-2 border-copper/50 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm">
+        <div className="bg-gradient-to-br from-parchment via-white/95 to-parchment/80 border-2 border-copper/60 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm ring-4 ring-copper/20">
           
           {/* Main Content Area */}
           <div className="p-8 md:p-12">
