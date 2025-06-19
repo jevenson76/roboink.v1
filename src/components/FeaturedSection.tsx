@@ -38,15 +38,38 @@ const FeaturedSection: React.FC = () => {
   const featuredProducts = [...apparelProducts, ...otherCategoryProducts];
 
   return (
-    <section className="py-6 bg-parchment">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl md:text-6xl font-slab font-bold text-navy text-center mb-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
-          Featured Designs
-        </h2>
-        
-        <p className="text-xl text-copper font-slab font-bold text-center mb-12 max-w-3xl mx-auto">
-          Discover our most popular steampunk creations, ready to wear
-        </p>
+    <section id="featured-section-enhanced-2024" className="relative bg-gradient-to-b from-white via-navy/5 to-navy/10 py-16 text-center border-b-4 border-navy/40 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-copper to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-navy to-transparent rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-12">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-slab font-bold text-navy mb-6 drop-shadow-2xl tracking-tight" 
+              style={{ 
+                textShadow: '3px 3px 6px rgba(0, 0, 0, 0.4), 0 0 30px rgba(184, 115, 51, 0.3)',
+                background: 'linear-gradient(180deg, #1A2634 0%, #1A2634 50%, #2a3644 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+            Featured Designs
+          </h2>
+          
+          {/* Decorative line */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-1 w-24 bg-gradient-to-r from-transparent to-copper"></div>
+            <div className="w-3 h-3 bg-copper rounded-full"></div>
+            <div className="h-1 w-24 bg-gradient-to-l from-transparent to-copper"></div>
+          </div>
+          
+          <p className="text-xl md:text-2xl text-copper font-slab font-bold max-w-3xl mx-auto leading-relaxed"
+             style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.2)' }}>
+            Discover our most popular steampunk creations, ready to wear
+          </p>
+        </div>
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
