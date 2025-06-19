@@ -101,7 +101,7 @@ const CollectionsPage: React.FC = () => {
       <NavbarPRD />
       
       {/* Hero Section - Enhanced */}
-      <section className="relative bg-gradient-to-b from-parchment via-copper/10 to-copper/20 py-20 text-center border-b-4 border-navy/40 overflow-hidden">
+      <section className="relative bg-gradient-to-b from-white via-navy/5 to-navy/10 py-16 text-center border-b-4 border-navy/40 overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-copper to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -109,7 +109,7 @@ const CollectionsPage: React.FC = () => {
         </div>
         
         <div className="relative z-10">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-slab font-bold text-navy mb-6 drop-shadow-2xl tracking-tight" 
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-slab font-bold text-navy mb-6 drop-shadow-2xl tracking-tight" 
               style={{ 
                 textShadow: '3px 3px 6px rgba(0, 0, 0, 0.4), 0 0 30px rgba(184, 115, 51, 0.3)',
                 background: 'linear-gradient(180deg, #1A2634 0%, #1A2634 50%, #2a3644 100%)',
@@ -129,7 +129,7 @@ const CollectionsPage: React.FC = () => {
             <div className="h-1 w-24 bg-gradient-to-l from-transparent to-copper"></div>
           </div>
           
-          <p className="text-2xl md:text-3xl text-copper font-slab font-bold max-w-4xl mx-auto leading-relaxed"
+          <p className="text-xl md:text-2xl text-copper font-slab font-bold max-w-3xl mx-auto leading-relaxed"
              style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.2)' }}>
             {searchQuery ? 
               `Found ${filteredProducts.length} items matching your search` :
