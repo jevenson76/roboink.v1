@@ -20,7 +20,7 @@ const NavbarPRD: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
             {/* Logo + Brand */}
-            <Link to="/" className="flex items-center space-x-4">
+            <Link to="/" className="flex items-center space-x-4 h-full py-2">
               <img
                 src={logo}
                 alt="RoboInk Tees"
@@ -34,10 +34,10 @@ const NavbarPRD: React.FC = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden xl:flex items-center space-x-6">
+            <div className="hidden xl:flex items-center space-x-6 h-full">
               <Link
                 to="/"
-                className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
+                className="relative flex items-center h-full text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
               >
                 Featured
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-navy transition-all duration-300 group-hover:w-full"></span>
@@ -45,7 +45,7 @@ const NavbarPRD: React.FC = () => {
               
               {/* Product Types Dropdown */}
               <div 
-                className="relative"
+                className="relative flex items-center h-full"
                 onMouseEnter={() => {
                   if (dropdownTimeout) clearTimeout(dropdownTimeout);
                   setActiveDropdown('productTypes');
@@ -57,7 +57,7 @@ const NavbarPRD: React.FC = () => {
               >
                 <Link
                   to="/collections"
-                  className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group flex items-center py-2"
+                  className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group flex items-center h-full"
                 >
                   Product Types
                   <ChevronDown className="ml-1 w-4 h-4" />
@@ -87,7 +87,7 @@ const NavbarPRD: React.FC = () => {
               
               {/* Collections Dropdown */}
               <div 
-                className="relative"
+                className="relative flex items-center h-full"
                 onMouseEnter={() => {
                   if (dropdownTimeout) clearTimeout(dropdownTimeout);
                   setActiveDropdown('collections');
@@ -99,7 +99,7 @@ const NavbarPRD: React.FC = () => {
               >
                 <Link
                   to="/collections"
-                  className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group flex items-center py-2"
+                  className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group flex items-center h-full"
                 >
                   Collections
                   <ChevronDown className="ml-1 w-4 h-4" />
@@ -129,7 +129,7 @@ const NavbarPRD: React.FC = () => {
               
               <Link
                 to="/faq"
-                className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
+                className="relative flex items-center h-full text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
               >
                 FAQ
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-navy transition-all duration-300 group-hover:w-full"></span>
@@ -137,7 +137,7 @@ const NavbarPRD: React.FC = () => {
               
               <Link
                 to="/contact"
-                className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
+                className="relative flex items-center h-full text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
               >
                 Contact
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-navy transition-all duration-300 group-hover:w-full"></span>
@@ -145,7 +145,7 @@ const NavbarPRD: React.FC = () => {
             </div>
 
             {/* Search, Cart & Mobile Menu */}
-            <div className="flex items-center space-x-4 mt-3.5">
+            <div className="flex items-center space-x-4 h-full">
               <button 
                 onClick={() => setIsSearchOpen(true)}
                 className="p-2 text-navy hover:text-navy/80 transition-colors"
