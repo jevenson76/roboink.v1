@@ -6,6 +6,7 @@ import { productTypes } from '../data/productTypes';
 import GearIcon from './GearIcon';
 
 const ProductTypesSection: React.FC = () => {
+  
   const categoryData = [
     { key: 'apparel', name: 'Apparel', icon: ShoppingBag, link: '/collections/apparel' },
     { key: 'bags', name: 'Bags', icon: Package, link: '/collections/bags' },
@@ -24,7 +25,12 @@ const ProductTypesSection: React.FC = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-white via-navy/5 to-navy/10 py-16 text-center border-b-4 border-navy/40 overflow-hidden" data-component="product-types-section">
+    <section 
+      className="relative bg-gradient-to-b from-white via-navy/5 to-navy/10 py-16 text-center border-b-4 border-navy/40 overflow-hidden" 
+      data-component="product-types-section"
+      style={{ position: 'relative' }}
+      id="product-types-section-unique-2024">
+      {/* THIS IS PRODUCT TYPES SECTION - UPDATED VERSION */}
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-copper to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
