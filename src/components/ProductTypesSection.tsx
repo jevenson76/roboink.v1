@@ -24,13 +24,35 @@ const ProductTypesSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-parchment">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-gradient-to-b from-white via-navy/5 to-navy/10 py-16 overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-copper to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-navy to-transparent rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-slab font-bold text-navy mb-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-slab font-bold text-navy mb-6 drop-shadow-2xl tracking-tight" 
+              style={{ 
+                textShadow: '3px 3px 6px rgba(0, 0, 0, 0.4), 0 0 30px rgba(184, 115, 51, 0.3)',
+                background: 'linear-gradient(180deg, #1A2634 0%, #1A2634 50%, #2a3644 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
             Shop by Product Type
           </h2>
-          <p className="text-lg text-copper font-slab font-bold max-w-3xl mx-auto">
+          
+          {/* Decorative line */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-1 w-24 bg-gradient-to-r from-transparent to-copper"></div>
+            <div className="w-3 h-3 bg-copper rounded-full"></div>
+            <div className="h-1 w-24 bg-gradient-to-l from-transparent to-copper"></div>
+          </div>
+          
+          <p className="text-xl md:text-2xl text-copper font-slab font-bold max-w-3xl mx-auto leading-relaxed"
+             style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.2)' }}>
             Find the perfect canvas for your steampunk style
           </p>
         </div>
@@ -44,25 +66,29 @@ const ProductTypesSection: React.FC = () => {
               <Link
                 key={category.key}
                 to={category.link}
-                className="group relative bg-parchment rounded-lg shadow-lg hover:shadow-[0_10px_30px_-5px_rgba(212,180,131,0.7)] p-8 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center"
+                className="group relative bg-white border-2 border-navy/20 rounded-2xl shadow-xl hover:shadow-2xl p-8 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center overflow-hidden"
               >
+                {/* Background gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-copper/10 to-navy/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Decorative gear */}
                 <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-50 transition-opacity duration-300">
                   <GearIcon className="w-12 h-12 text-navy/50 group-hover:text-copper transition-colors duration-300 group-hover:animate-spin" />
                 </div>
 
-                <div className="mb-4">
-                  <Icon className="w-16 h-16 text-navy group-hover:text-copper transition-colors duration-300" />
+                <div className="relative mb-6">
+                  <Icon className="w-20 h-20 text-navy group-hover:text-copper transition-colors duration-300" />
                 </div>
                 
-                <h3 className="text-2xl font-slab font-bold text-navy mb-2">
+                <h3 className="relative text-3xl font-slab font-bold text-navy mb-3 group-hover:text-copper transition-colors duration-300">
                   {category.name}
                 </h3>
                 
-                <p className="text-copper font-semibold mb-4">
+                <p className="relative text-lg text-copper font-semibold mb-6">
                   {itemCount} {itemCount === 1 ? 'Design' : 'Designs'} Available
                 </p>
                 
-                <div className="mt-auto px-6 py-2 bg-navy text-parchment rounded-full font-slab font-semibold transition-all duration-300 group-hover:bg-copper group-hover:text-navy">
+                <div className="relative mt-auto px-8 py-3 bg-navy text-white rounded-full font-slab font-semibold text-lg transition-all duration-300 group-hover:bg-copper group-hover:text-navy group-hover:shadow-lg">
                   Shop Now
                 </div>
               </Link>
