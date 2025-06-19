@@ -41,6 +41,17 @@ function AppWithRouter() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/care" element={<CarePage />} />
           <Route path="/custom-requests" element={<CustomRequestsPage />} />
+          <Route path="*" element={
+            <div className="min-h-screen bg-parchment flex items-center justify-center">
+              <div className="text-center">
+                <h1 className="text-6xl font-slab font-bold text-navy mb-4">404</h1>
+                <p className="text-2xl text-copper mb-8">Page Not Found</p>
+                <a href="/" className="inline-block px-8 py-3 bg-navy text-white font-slab rounded-full hover:bg-navy/80 transition-colors">
+                  Return Home
+                </a>
+              </div>
+            </div>
+          } />
         </Routes>
         </FilterProvider>
       </CartProvider>
