@@ -24,9 +24,9 @@ const NavbarPRD: React.FC = () => {
               <img
                 src={logo}
                 alt="RoboInk Tees"
-                className="h-16 w-auto"
+                className="h-20 w-auto"
               />
-              <span className="font-slab text-3xl font-bold text-navy tracking-wide"
+              <span className="font-slab text-4xl font-bold text-navy tracking-wide"
                 style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.2)' }}
               >
                 RoboInk Tees
@@ -37,7 +37,7 @@ const NavbarPRD: React.FC = () => {
             <div className="hidden xl:flex items-center space-x-6 h-full">
               <Link
                 to="/"
-                className="relative flex items-center h-full text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
+                className="relative flex items-center h-full text-navy font-slab text-2xl font-semibold hover:text-navy/80 transition-colors group"
               >
                 Featured
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-navy transition-all duration-300 group-hover:w-full"></span>
@@ -57,7 +57,7 @@ const NavbarPRD: React.FC = () => {
               >
                 <Link
                   to="/collections"
-                  className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group flex items-center h-full"
+                  className="relative text-navy font-slab text-2xl font-semibold hover:text-navy/80 transition-colors group flex items-center h-full"
                 >
                   Product Types
                   <ChevronDown className="ml-1 w-4 h-4" />
@@ -75,7 +75,7 @@ const NavbarPRD: React.FC = () => {
                         to={`/collections/${key.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '')}`}
                         className="block py-2 px-3 text-navy hover:text-copper hover:bg-navy/5 rounded transition-all duration-200 group whitespace-nowrap"
                       >
-                        <span className="font-slab font-semibold text-base relative">
+                        <span className="font-slab font-semibold text-lg relative">
                           {category.name}
                           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-copper transition-all duration-300 group-hover:w-full"></span>
                         </span>
@@ -99,7 +99,7 @@ const NavbarPRD: React.FC = () => {
               >
                 <Link
                   to="/collections"
-                  className="relative text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group flex items-center h-full"
+                  className="relative text-navy font-slab text-2xl font-semibold hover:text-navy/80 transition-colors group flex items-center h-full"
                 >
                   Collections
                   <ChevronDown className="ml-1 w-4 h-4" />
@@ -117,7 +117,7 @@ const NavbarPRD: React.FC = () => {
                         to={category.id === 'custom-requests' ? '/custom-requests' : `/collections?category=${category.id}`}
                         className="block py-2 px-3 -mx-2 text-navy hover:text-copper hover:bg-navy/5 rounded transition-all duration-200 group whitespace-nowrap"
                       >
-                        <span className="font-slab font-semibold text-base relative">
+                        <span className="font-slab font-semibold text-lg relative">
                           {category.name}
                           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-copper transition-all duration-300 group-hover:w-full"></span>
                         </span>
@@ -129,7 +129,7 @@ const NavbarPRD: React.FC = () => {
               
               <Link
                 to="/faq"
-                className="relative flex items-center h-full text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
+                className="relative flex items-center h-full text-navy font-slab text-2xl font-semibold hover:text-navy/80 transition-colors group"
               >
                 FAQ
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-navy transition-all duration-300 group-hover:w-full"></span>
@@ -137,7 +137,7 @@ const NavbarPRD: React.FC = () => {
               
               <Link
                 to="/contact"
-                className="relative flex items-center h-full text-navy font-slab text-xl font-semibold hover:text-navy/80 transition-colors group"
+                className="relative flex items-center h-full text-navy font-slab text-2xl font-semibold hover:text-navy/80 transition-colors group"
               >
                 Contact
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-navy transition-all duration-300 group-hover:w-full"></span>
@@ -178,7 +178,7 @@ const NavbarPRD: React.FC = () => {
             <div className="px-4 py-4 space-y-2">
               <Link
                 to="/"
-                className="block px-4 py-3 text-navy font-slab text-xl font-semibold hover:bg-navy/10 rounded transition-colors"
+                className="block px-4 py-3 text-navy font-slab text-2xl font-semibold hover:bg-navy/10 rounded transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Featured
@@ -188,7 +188,7 @@ const NavbarPRD: React.FC = () => {
               <div>
                 <Link
                   to="/collections"
-                  className="block px-4 py-3 text-navy font-slab text-xl font-semibold hover:bg-navy/10 rounded transition-colors"
+                  className="block px-4 py-3 text-navy font-slab text-2xl font-semibold hover:bg-navy/10 rounded transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Product Types
@@ -211,7 +211,7 @@ const NavbarPRD: React.FC = () => {
               <div>
                 <Link
                   to="/collections"
-                  className="block px-4 py-3 text-navy font-slab text-xl font-semibold hover:bg-navy/10 rounded transition-colors"
+                  className="block px-4 py-3 text-navy font-slab text-2xl font-semibold hover:bg-navy/10 rounded transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Collections
@@ -232,7 +232,7 @@ const NavbarPRD: React.FC = () => {
               
               <Link
                 to="/faq"
-                className="block px-4 py-3 text-navy font-slab text-xl font-semibold hover:bg-navy/10 rounded transition-colors"
+                className="block px-4 py-3 text-navy font-slab text-2xl font-semibold hover:bg-navy/10 rounded transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 FAQ

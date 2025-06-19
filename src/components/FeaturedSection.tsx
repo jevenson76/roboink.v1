@@ -40,11 +40,11 @@ const FeaturedSection: React.FC = () => {
   return (
     <section className="py-6 bg-parchment">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-slab font-bold text-navy text-center mb-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
+        <h2 className="text-5xl md:text-6xl font-slab font-bold text-navy text-center mb-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
           Featured Designs
         </h2>
         
-        <p className="text-lg text-copper font-slab font-bold text-center mb-12 max-w-3xl mx-auto">
+        <p className="text-xl text-copper font-slab font-bold text-center mb-12 max-w-3xl mx-auto">
           Discover our most popular steampunk creations, ready to wear
         </p>
 

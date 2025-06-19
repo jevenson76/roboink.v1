@@ -13,10 +13,10 @@ const CustomSection: React.FC = () => {
               
               {/* Left Content */}
               <div className="flex-1 text-center lg:text-left">
-                <h2 className="text-4xl md:text-5xl font-slab font-bold text-navy mb-4">
+                <h2 className="text-5xl md:text-6xl font-slab font-bold text-navy mb-4">
                   Need Something Unique?
                 </h2>
-                <p className="text-lg md:text-xl text-copper font-medium mb-8 max-w-xl">
+                <p className="text-xl md:text-2xl text-copper font-medium mb-8 max-w-xl">
                   Commission a one-of-a-kind steampunk design tailored to your vision
                 </p>
                 
@@ -62,8 +62,8 @@ const CustomSection: React.FC = () => {
                   {/* Center badge */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="bg-parchment border-2 border-copper rounded-lg px-6 py-3 shadow-lg">
-                      <span className="text-2xl font-slab font-bold text-copper">CUSTOM</span>
-                      <span className="block text-xs font-slab text-navy tracking-wider uppercase text-center">Designs</span>
+                      <span className="text-3xl font-slab font-bold text-copper">CUSTOM</span>
+                      <span className="block text-sm font-slab text-navy tracking-wider uppercase text-center">Designs</span>
                     </div>
                   </div>
                 </div>
@@ -80,8 +80,8 @@ const CustomSection: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-slab font-bold text-navy mb-2">Personalized Text</h3>
-                <p className="text-sm text-navy/70">
+                <h3 className="text-xl font-slab font-bold text-navy mb-2">Personalized Text</h3>
+                <p className="text-base text-navy/70">
                   Add custom steampunk-styled text, names, or quotes to any design
                 </p>
               </div>
@@ -92,8 +92,8 @@ const CustomSection: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-slab font-bold text-navy mb-2">Original Artwork</h3>
-                <p className="text-sm text-navy/70">
+                <h3 className="text-xl font-slab font-bold text-navy mb-2">Original Artwork</h3>
+                <p className="text-base text-navy/70">
                   Commission completely new designs based on your ideas
                 </p>
               </div>
@@ -104,8 +104,8 @@ const CustomSection: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-slab font-bold text-navy mb-2">Design Modifications</h3>
-                <p className="text-sm text-navy/70">
+                <h3 className="text-xl font-slab font-bold text-navy mb-2">Design Modifications</h3>
+                <p className="text-base text-navy/70">
                   Customize existing designs with color changes or added elements
                 </p>
               </div>

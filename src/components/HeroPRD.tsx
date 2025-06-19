@@ -51,7 +51,7 @@ const HeroPRD: React.FC = () => {
           
           {/* Main Title with maximum impact */}
           <h1 
-            className={`text-4xl md:text-5xl lg:text-6xl font-slab font-bold text-parchment mb-8 text-shadow-lg text-center leading-tight ${isLoaded ? 'hero-text-reveal' : 'opacity-0'}`}
+            className={`text-5xl md:text-6xl lg:text-7xl font-slab font-bold text-parchment mb-8 text-shadow-lg text-center leading-tight ${isLoaded ? 'hero-text-reveal' : 'opacity-0'}`}
             style={{ animationDelay: '0.5s', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)' }}
           >
             Artfully Engineered. Robotically Inked.
