@@ -100,21 +100,45 @@ const CollectionsPage: React.FC = () => {
     <div className="min-h-screen bg-parchment animate-fade-in-from-top">
       <NavbarPRD />
       
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-parchment to-copper/20 py-12 text-center border-b-2 border-navy/30">
-        <h1 className="text-5xl font-slab font-bold text-navy mb-2 drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}>
-          {searchQuery ? `Search Results for "${searchQuery}"` : 
-           (typeFromUrl && typeFromUrl in productTypes) ? `${productTypes[typeFromUrl as keyof typeof productTypes].name} Collection` :
-           'Our Collections'}
-        </h1>
-        <p className="text-xl text-copper font-slab font-bold max-w-3xl mx-auto">
-          {searchQuery ? 
-            `Found ${filteredProducts.length} items matching your search` :
-            (typeFromUrl && typeFromUrl in productTypes) ? 
-            `Explore our collection of handcrafted ${productTypes[typeFromUrl as keyof typeof productTypes].name.toLowerCase()}` :
-            'Explore our complete collection of steampunk-inspired designs'
-          }
-        </p>
+      {/* Hero Section - Enhanced */}
+      <section className="relative bg-gradient-to-b from-parchment via-copper/10 to-copper/20 py-20 text-center border-b-4 border-navy/40 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-copper to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-navy to-transparent rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        </div>
+        
+        <div className="relative z-10">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-slab font-bold text-navy mb-6 drop-shadow-2xl tracking-tight" 
+              style={{ 
+                textShadow: '3px 3px 6px rgba(0, 0, 0, 0.4), 0 0 30px rgba(184, 115, 51, 0.3)',
+                background: 'linear-gradient(180deg, #1A2634 0%, #1A2634 50%, #2a3644 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+            {searchQuery ? `Search Results for "${searchQuery}"` : 
+             (typeFromUrl && typeFromUrl in productTypes) ? `${productTypes[typeFromUrl as keyof typeof productTypes].name} Collection` :
+             'Our Collections'}
+          </h1>
+          
+          {/* Decorative line */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-1 w-24 bg-gradient-to-r from-transparent to-copper"></div>
+            <div className="w-3 h-3 bg-copper rounded-full"></div>
+            <div className="h-1 w-24 bg-gradient-to-l from-transparent to-copper"></div>
+          </div>
+          
+          <p className="text-2xl md:text-3xl text-copper font-slab font-bold max-w-4xl mx-auto leading-relaxed"
+             style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.2)' }}>
+            {searchQuery ? 
+              `Found ${filteredProducts.length} items matching your search` :
+              (typeFromUrl && typeFromUrl in productTypes) ? 
+              `Explore our collection of handcrafted ${productTypes[typeFromUrl as keyof typeof productTypes].name.toLowerCase()}` :
+              'Explore our complete collection of steampunk-inspired designs'
+            }
+          </p>
+        </div>
       </section>
 
       {/* Mobile Filter Button */}
