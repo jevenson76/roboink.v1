@@ -300,7 +300,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
 
         {/* Expanded State */}
         {isOpen && (
-          <div className="p-4 space-y-4 max-h-[calc(100vh-200px)] overflow-y-auto custom-scrollbar">
+          <div className="p-4 space-y-4 overflow-hidden">
             {sidebarContent}
           </div>
         )}
