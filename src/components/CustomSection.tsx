@@ -3,82 +3,104 @@ import { Link } from 'react-router-dom';
 
 const CustomSection: React.FC = () => {
   return (
-    <section className="py-6 bg-parchment">
+    <section className="py-16 bg-gradient-to-b from-parchment via-parchment to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-parchment border-2 border-navy rounded-lg shadow-xl p-8 md:p-12">
+        
+        {/* Hero Section - Clean and Centered */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-slab font-bold text-navy mb-6 tracking-tight">
+            Create Your Vision
+          </h2>
+          <p className="text-xl md:text-2xl text-copper font-medium max-w-3xl mx-auto leading-relaxed">
+            Transform your ideas into unique steampunk designs
+          </p>
+        </div>
+
+        {/* Interactive Gear Animation - Standalone */}
+        <div className="relative w-64 h-64 mx-auto mb-16">
+          {/* Animated outer gear */}
+          <svg className="absolute inset-0 w-full h-full text-copper/20 animate-spin-slow" viewBox="0 0 256 256">
+            <g>
+              {/* Gear teeth */}
+              {Array.from({ length: 24 }).map((_, i) => {
+                const angle = (i * 15) * Math.PI / 180;
+                const innerRadius = 110;
+                const outerRadius = 125;
+                const x1 = 128 + innerRadius * Math.cos(angle);
+                const y1 = 128 + innerRadius * Math.sin(angle);
+                const x2 = 128 + outerRadius * Math.cos(angle);
+                const y2 = 128 + outerRadius * Math.sin(angle);
+                return (
+                  <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" strokeWidth="4" />
+                );
+              })}
+              <circle cx="128" cy="128" r="110" stroke="currentColor" strokeWidth="3" fill="none" />
+              <circle cx="128" cy="128" r="90" stroke="currentColor" strokeWidth="2" fill="none" />
+              <circle cx="128" cy="128" r="30" stroke="currentColor" strokeWidth="2" fill="currentColor" fillOpacity="0.05" />
+            </g>
+          </svg>
           
-          {/* Top Section */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Left side - Content */}
-            <div className="flex-1 text-center md:text-left">
-              <h2 className="text-4xl font-slab font-bold text-navy mb-3">
-                Need Something Unique?
-              </h2>
-              <p className="text-lg text-copper font-semibold mb-8 max-w-lg">
-                Commission a one-of-a-kind steampunk design tailored to your vision
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Link
-                  to="/custom-requests"
-                  className="inline-block px-8 py-3 bg-navy text-parchment font-slab font-semibold rounded-full hover:bg-navy/80 transition-all duration-300 shadow-lg text-center"
-                >
-                  Start Custom Order
-                </Link>
-                <Link
-                  to="/collections?category=typographic-treasures"
-                  className="inline-block px-8 py-3 bg-parchment border-2 border-navy text-navy font-slab font-semibold rounded-full hover:bg-navy hover:text-parchment transition-all duration-300 text-center"
-                >
-                  Browse Text Designs
-                </Link>
-              </div>
-            </div>
-
-            {/* Right side - Visual element */}
-            <div className="flex-shrink-0 w-56 h-56 relative flex items-center justify-center">
-              <svg className="absolute inset-0 w-full h-full text-copper/30" viewBox="0 0 200 200">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <line 
-                    key={i}
-                    x1="100" y1="100" 
-                    x2={100 + 100 * Math.cos(i * 2 * Math.PI / 12)} 
-                    y2={100 + 100 * Math.sin(i * 2 * Math.PI / 12)}
-                    stroke="currentColor"
-                    strokeWidth="1"
-                  />
-                ))}
-                <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="1" fill="none" />
-              </svg>
-
-              <div className="relative bg-parchment border-2 border-navy rounded-full w-40 h-40 flex flex-col items-center justify-center">
-                <span className="text-2xl font-slab font-bold text-rust">CUSTOM</span>
-                <span className="text-sm font-slab text-navy tracking-widest">DESIGNS</span>
-              </div>
+          {/* Center content */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="bg-white border-3 border-copper rounded-2xl px-8 py-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+              <span className="text-3xl font-slab font-bold text-copper block">CUSTOM</span>
+              <span className="text-sm font-slab text-navy tracking-[0.3em] uppercase">Designs</span>
             </div>
           </div>
+        </div>
 
-          {/* Divider */}
-          <div className="my-12 border-t border-navy/20"></div>
+        {/* CTA Buttons - Prominent and Centered */}
+        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20 px-4">
+          <Link
+            to="/custom-requests"
+            className="inline-flex items-center justify-center px-10 py-5 bg-copper text-white font-slab font-bold text-xl rounded-full hover:bg-rust transform hover:scale-105 transition-all duration-300 shadow-xl"
+          >
+            Start Your Custom Order
+          </Link>
+          <Link
+            to="/collections"
+            className="inline-flex items-center justify-center px-10 py-5 bg-transparent border-3 border-navy text-navy font-slab font-bold text-xl rounded-full hover:bg-navy hover:text-white hover:border-navy transition-all duration-300"
+          >
+            Browse Collections
+          </Link>
+        </div>
 
-          {/* Bottom Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h3 className="text-lg font-slab font-bold text-navy mb-2">Personalized Text</h3>
-              <p className="text-base text-navy/70">
-                Add custom steampunk-styled text, names, or quotes to any design
-              </p>
+        {/* Features Grid - Modern Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center group">
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-copper/20 to-copper/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-10 h-10 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
             </div>
-            <div>
-              <h3 className="text-lg font-slab font-bold text-navy mb-2">Original Artwork</h3>
-              <p className="text-base text-navy/70">
-                Commission completely new designs based on your ideas
-              </p>
+            <h3 className="text-2xl font-slab font-bold text-navy mb-4">Custom Text</h3>
+            <p className="text-navy/70 leading-relaxed">
+              Add personalized messages, names, or quotes in authentic steampunk typography
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center group">
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-copper/20 to-copper/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-10 h-10 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
             </div>
-            <div>
-              <h3 className="text-lg font-slab font-bold text-navy mb-2">Design Modifications</h3>
-              <p className="text-base text-navy/70">
-                Customize existing designs with color changes or added elements
-              </p>
+            <h3 className="text-2xl font-slab font-bold text-navy mb-4">Original Art</h3>
+            <p className="text-navy/70 leading-relaxed">
+              Commission unique designs crafted specifically for your vision
+            </p>
+          </div>
+          
+          <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center group">
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-copper/20 to-copper/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <svg className="w-10 h-10 text-copper" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
             </div>
+            <h3 className="text-2xl font-slab font-bold text-navy mb-4">Modifications</h3>
+            <p className="text-navy/70 leading-relaxed">
+              Customize existing designs with new colors or elements
+            </p>
           </div>
         </div>
       </div>

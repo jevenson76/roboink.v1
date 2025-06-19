@@ -25,6 +25,7 @@ export default {
         'gearSpin': 'spin 8s linear infinite',
         'steamPulse': 'steam 3s ease-in-out infinite',
         'softFloat': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin 20s linear infinite',
       },
       keyframes: {
         float: {
