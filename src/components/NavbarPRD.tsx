@@ -20,13 +20,13 @@ const NavbarPRD: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
             {/* Logo + Brand */}
-            <Link to="/" className="flex items-center space-x-4 h-full py-2">
+            <Link to="/" className="flex items-center space-x-4 h-full">
               <img
                 src={logo}
                 alt="RoboInk Tees"
-                className="h-20 w-auto"
+                className="h-16 w-auto"
               />
-              <span className="font-slab text-4xl font-bold text-navy tracking-wide"
+              <span className="font-slab text-3xl font-bold text-navy tracking-wide"
                 style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.2)' }}
               >
                 RoboInk Tees

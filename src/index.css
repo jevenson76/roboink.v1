@@ -497,37 +497,7 @@ input[type="checkbox"]:focus {
   }
 }
 
-/* Navbar Text Alignment Fix */
-.navbar-text-link {
-  position: relative;
-  top: 9px;
-}
-
-nav a[href]:not(.icon-link) {
-  position: relative;
-  transform: translateY(9px);
-}
-
-.nav-text-featured,
-.nav-text-product-types,
-.nav-text-collections,
-.nav-text-faq,
-.nav-text-contact {
-  display: inline-block;
-  transform: translateY(9px);
-}
-
-.nav-dropdown-trigger {
-  transform: translateY(9px);
-}
-
-.nav-dropdown-trigger svg {
-  vertical-align: middle;
-}
-
-.navbar-padded-text {
-  padding-top: 9px;
-}
+/* Navbar proper vertical alignment - removed manual transforms */
 
 /* Micro-Animations Library */
 /* 1. Navigation Hover Effects */
