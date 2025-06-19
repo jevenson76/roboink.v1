@@ -28,7 +28,11 @@ const categoryImages: { [key: string]: string } = {
 
 const CollectionsSection: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-b from-white via-navy/5 to-navy/10 py-16 text-center border-b-4 border-navy/40 overflow-hidden">
+    <section 
+      id="collections-section-updated-2024" 
+      data-version="2024-12-enhanced"
+      className="relative bg-gradient-to-b from-white via-navy/5 to-navy/10 py-16 text-center border-b-4 border-navy/40 overflow-hidden">
+      {/* THIS IS THE UPDATED COLLECTIONS SECTION - VERSION 2024 */}
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-copper to-transparent rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
