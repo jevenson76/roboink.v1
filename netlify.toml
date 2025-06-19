@@ -1,6 +1,7 @@
 # Netlify configuration for React SPA
 
 [build]
+  command = "npm run build"
   publish = "dist"
 
 # SPA redirect rule - this ensures client-side routing works
