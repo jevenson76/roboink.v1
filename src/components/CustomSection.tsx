@@ -17,7 +17,7 @@ const CustomSection: React.FC = () => {
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-parchment via-white/95 to-parchment/80 border-2 border-copper/60 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm ring-4 ring-copper/20">
+        <div className="bg-gradient-to-br from-copper/20 via-copper/30 to-copper/40 border-2 border-copper/60 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm ring-4 ring-copper/20">
           
           {/* Main Content Area */}
           <div className="p-8 md:p-12">
