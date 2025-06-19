@@ -71,13 +71,13 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
     <>
       {/* Search */}
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-navy/60" />
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-navy/60" />
         <input
           type="text"
           placeholder="Search filters..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-10 pr-3 py-2 border-2 border-navy/20 rounded-lg focus:border-copper focus:outline-none transition-colors bg-white/80"
+          className="w-full pl-10 pr-3 py-3 text-base border-2 border-navy/20 rounded-lg focus:border-copper focus:outline-none transition-colors bg-white/80"
         />
       </div>
 
@@ -85,31 +85,31 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
       {activeFilterCount > 0 && (
         <button
           onClick={clearAllFilters}
-          className="w-full flex items-center justify-center space-x-2 py-2 bg-copper text-navy rounded-lg hover:bg-copper/90 transition-colors"
+          className="w-full flex items-center justify-center space-x-2 py-3 bg-copper text-navy text-base font-semibold rounded-lg hover:bg-copper/90 transition-colors"
         >
-          <RotateCcw className="w-4 h-4" />
+          <RotateCcw className="w-5 h-5" />
           <span>Clear All Filters ({activeFilterCount})</span>
         </button>
       )}
 
       {/* Results Count */}
-      <div className="bg-navy/10 rounded-lg p-3 text-center">
-        <p className="text-navy font-bold">{totalProducts} Products Found</p>
+      <div className="bg-navy/10 rounded-lg p-4 text-center">
+        <p className="text-navy font-bold text-lg">{totalProducts} Products Found</p>
       </div>
 
       {/* Product Types Section */}
       <div className="border-t border-b border-navy/10">
         <button
           onClick={() => toggleSection('product-types')}
-          className="w-full p-3 flex items-center justify-between hover:bg-navy/5 transition-colors group"
+          className="w-full p-4 flex items-center justify-between hover:bg-navy/5 transition-colors group"
         >
-          <span className="font-slab font-bold text-navy group-hover:text-copper transition-colors">
+          <span className="font-slab font-bold text-navy text-lg group-hover:text-copper transition-colors">
             Product Types
           </span>
           {expandedSections.includes('product-types') ? (
-            <ChevronDown className="w-4 h-4 text-navy group-hover:text-copper transition-all" />
+            <ChevronDown className="w-5 h-5 text-navy group-hover:text-copper transition-all" />
           ) : (
-            <ChevronRight className="w-4 h-4 text-navy group-hover:text-copper transition-all" />
+            <ChevronRight className="w-5 h-5 text-navy group-hover:text-copper transition-all" />
           )}
         </button>
         
@@ -121,7 +121,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                   onClick={() => toggleProductTypeExpansion(key)}
                   className="w-full flex items-center justify-between text-left hover:text-copper transition-colors"
                 >
-                  <h4 className="font-slab font-semibold text-navy text-sm">{category.name}</h4>
+                  <h4 className="font-slab font-semibold text-navy text-base">{category.name}</h4>
                   <ChevronDown 
                     className={`w-3 h-3 transition-transform duration-200 ${
                       expandedProductTypes.includes(key) ? 'rotate-180' : ''
@@ -151,11 +151,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                               onChange={() => toggleProductType(item.id)}
                               className="w-4 h-4 text-copper rounded border-2 border-navy/30 focus:ring-copper focus:ring-offset-0"
                             />
-                            <span className={`text-sm ${isSelected ? 'text-parchment' : 'text-navy'}`}>
+                            <span className={`text-base ${isSelected ? 'text-parchment' : 'text-navy'}`}>
                               {item.name}
                             </span>
                           </div>
-                          <span className={`text-xs px-2 py-1 rounded ${
+                          <span className={`text-sm px-2 py-1 rounded ${
                             isSelected 
                               ? 'bg-parchment/20 text-parchment' 
                               : 'bg-navy/10 text-navy/60'
@@ -177,15 +177,15 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
       <div className="border-b border-navy/10">
         <button
           onClick={() => toggleSection('categories')}
-          className="w-full p-3 flex items-center justify-between hover:bg-navy/5 transition-colors group"
+          className="w-full p-4 flex items-center justify-between hover:bg-navy/5 transition-colors group"
         >
-          <span className="font-slab font-bold text-navy group-hover:text-copper transition-colors">
+          <span className="font-slab font-bold text-navy text-lg group-hover:text-copper transition-colors">
             Design Categories
           </span>
           {expandedSections.includes('categories') ? (
-            <ChevronDown className="w-4 h-4 text-navy group-hover:text-copper transition-all" />
+            <ChevronDown className="w-5 h-5 text-navy group-hover:text-copper transition-all" />
           ) : (
-            <ChevronRight className="w-4 h-4 text-navy group-hover:text-copper transition-all" />
+            <ChevronRight className="w-5 h-5 text-navy group-hover:text-copper transition-all" />
           )}
         </button>
         
@@ -211,11 +211,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                       onChange={() => toggleCategory(category.id)}
                       className="w-4 h-4 text-copper rounded border-2 border-navy/30 focus:ring-copper focus:ring-offset-0"
                     />
-                    <span className={`text-sm ${isSelected ? 'text-parchment' : 'text-navy'}`}>
+                    <span className={`text-base ${isSelected ? 'text-parchment' : 'text-navy'}`}>
                       {category.name}
                     </span>
                   </div>
-                  <span className={`text-xs px-2 py-1 rounded ${
+                  <span className={`text-sm px-2 py-1 rounded ${
                     isSelected 
                       ? 'bg-parchment/20 text-parchment' 
                       : 'bg-navy/10 text-navy/60'
@@ -260,10 +260,10 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
       <div className="sticky top-28 bg-gradient-to-b from-parchment to-copper/20 border-2 border-navy/40 rounded-lg shadow-xl overflow-hidden">
         {/* Header */}
         <div className="bg-navy/90 p-4 flex items-center justify-between">
-          <h3 className={`text-xl font-slab font-bold text-parchment transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
+          <h3 className={`text-2xl font-slab font-bold text-parchment transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
             Filters
             {activeFilterCount > 0 && (
-              <span className="ml-2 text-sm bg-copper text-navy px-2 py-1 rounded-full">
+              <span className="ml-2 text-base bg-copper text-navy px-2 py-1 rounded-full">
                 {activeFilterCount}
               </span>
             )}
