@@ -1,0 +1,846 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700&family=Cinzel+Decorative:wght@700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PRD Theme Variables */
+:root {
+  --parchment: #F8F5F0;
+  --navy: #1A2634;
+}
+
+@layer base {
+  html {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--parchment);
+    color: var(--navy);
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+  
+  .animate-spin-slow-reverse {
+    animation: spin 12s linear infinite reverse;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-steam {
+    animation: steam 3s ease-in-out infinite;
+  }
+  
+  .animate-gear-spin {
+    animation: spin 3s linear infinite;
+  }
+  
+  .animate-gear-spin-reverse {
+    animation: spin 4s linear infinite reverse;
+  }
+  
+  .animate-fade-in-from-top {
+    animation: fadeInFromTop 0.6s ease-out;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(212, 180, 131, 0.7);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 5px rgba(212, 180, 131, 0.3);
+  }
+}
+
+@keyframes steam {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-50px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.5);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pressure-gauge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+}
+
+/* Custom Scrollbar for Filter Sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(26, 38, 52, 0.1);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #B8860B;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #DAA520;
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #B8860B rgba(26, 38, 52, 0.1);
+}
+
+/* Filter checkbox custom styling */
+input[type="checkbox"]:checked {
+  background-color: #B8860B;
+  border-color: #B8860B;
+}
+
+input[type="checkbox"]:checked:hover {
+  background-color: #DAA520;
+  border-color: #DAA520;
+}
+
+input[type="checkbox"]:focus {
+  --tw-ring-color: #B8860B;
+}
+
+/* Smooth transitions for filter animations */
+.filter-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile filter drawer animation */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.3s ease-in forwards;
+}
+
+/* Filter badge pulse animation */
+@keyframes filterPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.filter-badge-pulse {
+  animation: filterPulse 2s infinite;
+}
+
+/* Hover effects for filter items */
+.filter-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.filter-item:hover::before {
+  left: 100%;
+}
+
+/* Steampunk gear animation for loading states */
+@keyframes gearRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gear-rotate {
+  animation: gearRotate 4s linear infinite;
+}
+
+.gear-rotate-reverse {
+  animation: gearRotate 6s linear infinite reverse;
+}
+
+/* Enhanced Sub-Headers */
+.page-subheader {
+  font-family: 'Roboto Slab', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #800020;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  animation: fadeInScale 0.6s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.collection-subheader {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #800020;
+  font-family: 'Roboto Slab', serif;
+}
+
+.product-section-header {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero Title with Multi-layer Effects */
+.hero-title-impact {
+  font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 0.9;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #B87333 0%,
+    #DAA520 20%,
+    #FFD700 40%,
+    #B8860B 60%,
+    #CD7F32 80%,
+    #B87333 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: metallicSheen 8s ease-in-out infinite;
+  filter: 
+    drop-shadow(0 2px 2px rgba(0,0,0,0.5))
+    drop-shadow(0 4px 4px rgba(0,0,0,0.3))
+    drop-shadow(0 8px 8px rgba(0,0,0,0.2));
+}
+
+@keyframes metallicSheen {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-subtitle-impact {
+  font-family: 'Roboto Slab', serif;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-style: italic;
+  color: #F8F5F0;
+  text-shadow: 
+    1px 1px 0 #B87333,
+    2px 2px 0 #B87333,
+    3px 3px 0 #B87333,
+    4px 4px 8px rgba(0,0,0,0.5);
+  letter-spacing: 0.1em;
+  margin-top: 1rem;
+  animation: subtitleFloat 4s ease-in-out infinite;
+}
+
+@keyframes subtitleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.hero-gear-accent {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.3;
+  animation: gearRotate 30s linear infinite;
+}
+
+.hero-gear-accent.top-left {
+  top: -20px;
+  left: -20px;
+  animation-direction: normal;
+}
+
+.hero-gear-accent.bottom-right {
+  bottom: -20px;
+  right: -20px;
+  animation-direction: reverse;
+}
+
+.hero-text-reveal {
+  animation: steamReveal 2s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@keyframes steamReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  50% {
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.victorian-divider {
+  width: 200px;
+  height: 2px;
+  margin: 2rem auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #B87333 20%,
+    #DAA520 50%,
+    #B87333 80%,
+    transparent
+  );
+  position: relative;
+}
+
+.victorian-divider::before,
+.victorian-divider::after {
+  content: '❦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #B87333;
+}
+
+.victorian-divider::before {
+  left: -20px;
+}
+
+.victorian-divider::after {
+  right: -20px;
+}
+
+.hero-cta-steampunk {
+  position: relative;
+  padding: 1rem 3rem;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #B8860B 0%, #DAA520 100%);
+  color: #F8F5F0;
+  border: 3px solid #B87333;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 15px rgba(184, 134, 11, 0.3),
+    inset 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-cta-steampunk::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.3) 0%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.hero-cta-steampunk:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(184, 134, 11, 0.4),
+    inset 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-cta-steampunk:hover::before {
+  animation: ctaShine 0.5s ease-out;
+}
+
+@keyframes ctaShine {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+/* Navbar Text Alignment Fix */
+.navbar-text-link {
+  position: relative;
+  top: 9px;
+}
+
+nav a[href]:not(.icon-link) {
+  position: relative;
+  transform: translateY(9px);
+}
+
+.nav-text-featured,
+.nav-text-product-types,
+.nav-text-collections,
+.nav-text-faq,
+.nav-text-contact {
+  display: inline-block;
+  transform: translateY(9px);
+}
+
+.nav-dropdown-trigger {
+  transform: translateY(9px);
+}
+
+.nav-dropdown-trigger svg {
+  vertical-align: middle;
+}
+
+.navbar-padded-text {
+  padding-top: 9px;
+}
+
+/* Micro-Animations Library */
+/* 1. Navigation Hover Effects */
+.nav-link-steampunk {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link-steampunk::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #B87333, transparent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav-link-steampunk:hover::after {
+  width: 100%;
+}
+
+.nav-link-steampunk::before {
+  content: '⚙';
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.nav-link-steampunk:hover::before {
+  opacity: 0.3;
+  transform: rotate(180deg);
+}
+
+/* 2. Card Hover Animations */
+.product-card-enhanced {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.product-card-enhanced:hover {
+  transform: translateY(-8px) rotateX(2deg);
+  box-shadow: 
+    0 20px 40px rgba(184, 134, 11, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-enhanced .image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card-enhanced:hover .product-image {
+  transform: scale(1.1) translateY(-5px);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.price-tag {
+  transition: all 0.3s ease;
+}
+
+.product-card-enhanced:hover .price-tag {
+  animation: priceBounce 0.5s ease-out;
+}
+
+@keyframes priceBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* 3. Button Micro-Interactions */
+.button-steampunk {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button-steampunk::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.button-steampunk:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+.button-with-gear {
+  padding-right: 3rem;
+}
+
+.button-with-gear::before {
+  content: '⚙';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.5s ease;
+  font-size: 1.2rem;
+}
+
+.button-with-gear:hover::before {
+  transform: translateY(-50%) rotate(360deg);
+}
+
+/* 4. Loading States */
+.loading-gear {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.loading-gear::before,
+.loading-gear::after {
+  content: '';
+  position: absolute;
+  border: 3px solid #B87333;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.loading-gear::before {
+  width: 100%;
+  height: 100%;
+  animation: gearSpin 2s linear infinite;
+}
+
+.loading-gear::after {
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  animation: gearSpin 3s linear infinite reverse;
+}
+
+/* 5. Form Input Animations */
+.input-steampunk {
+  position: relative;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white),
+                    linear-gradient(90deg, #B87333, #DAA520);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.3s ease;
+}
+
+.input-steampunk:focus {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.2);
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  color: #666;
+}
+
+.input-steampunk:focus + .input-label,
+.input-steampunk:not(:placeholder-shown) + .input-label {
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  background: white;
+  padding: 0 0.5rem;
+  color: #B87333;
+}
+
+/* 6. Scroll-triggered Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.4s ease-out;
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.stagger-item:nth-child(1) { transition-delay: 0.1s; }
+.stagger-item:nth-child(2) { transition-delay: 0.2s; }
+.stagger-item:nth-child(3) { transition-delay: 0.3s; }
+.stagger-item:nth-child(4) { transition-delay: 0.4s; }
+
+/* 7. Toast Animations */
+.toast-steampunk {
+  animation: toastSlideIn 0.4s ease-out forwards;
+}
+
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(100%) scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 8. Image Gallery */
+.gallery-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  z-index: 10;
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    0 0 0 2px #B87333;
+}
+
+/* 9. Dropdown Animations */
+.dropdown-steampunk {
+  transform-origin: top center;
+  animation: dropdownReveal 0.3s ease-out forwards;
+}
+
+@keyframes dropdownReveal {
+  from {
+    opacity: 0;
+    transform: scaleY(0.8) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+/* 10. Cart Icon Animation */
+.cart-icon-bounce {
+  animation: cartBounce 0.4s ease-out;
+}
+
+@keyframes cartBounce {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(-5deg); }
+  50% { transform: scale(0.9) rotate(5deg); }
+  75% { transform: scale(1.1) rotate(-2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* 11. Success Checkmark */
+.success-checkmark {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.success-checkmark::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 2rem;
+  color: #4CAF50;
+  animation: checkmarkPop 0.5s ease-out forwards;
+}
+
+@keyframes checkmarkPop {
+  0% { transform: translate(-50%, -50%) scale(0) rotate(0deg); }
+  50% { transform: translate(-50%, -50%) scale(1.3) rotate(10deg); }
+  100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+}
+
+/* 12. Page Transitions */
+.page-transition {
+  animation: pageSlide 0.5s ease-out;
+}
+
+@keyframes pageSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
